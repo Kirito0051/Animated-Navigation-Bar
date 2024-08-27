@@ -1,0 +1,328 @@
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+NG+Modern:wght@100;400&display=swap');
+
+
+/* General Body Styles */
+body {
+  font-family: 'Playwrite NG Modern', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f5f5f0;
+  position: relative;
+}
+
+/* Navbar Styles */
+.navbar {
+  background-color: #7b85c6;
+  padding: 3px;
+  padding-left: 40px;
+  padding-right: 30px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 60px;
+  width: 100%;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* Space between items */
+}
+
+.navbar-content {
+  display: flex;
+  align-items: center;
+  margin-right: 50px;
+  /* Adjust margin to give space for the nav button */
+}
+
+.navbar a {
+  color: #3b3b3b;
+  text-decoration: none;
+  padding: 14px 20px;
+}
+
+.navbar a:hover {
+  background-color: #b0b8e4;
+  color: #3b3b3b;
+  /* White text color to maintain contrast */
+  transform: scale(1.1);
+}
+
+.navbar .nav-button:hover {
+  background-image: url('Froth.jpg');
+  background-size: cover;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  transform: scale(1.1);
+}
+
+.navbar .nav-button {
+  font-size: 24px;
+  cursor: pointer;
+  color: #3b3b3b;
+  margin-left: 10px;
+  /* Space between the menu button and the left edge */
+}
+
+/* Sidebar Styles */
+.sidebar {
+  height: 100%;
+  width: 250px;
+  position: fixed;
+  top: 0;
+  left: -250px;
+  /* Hide sidebar initially */
+  background-color: #333;
+  color: #fff;
+  padding-top: 60px;
+  transition: 0.3s;
+  /* Smooth transition */
+  z-index: 3;
+  /* Above the overlay */
+  display: flex;
+  flex-direction: column;
+  /* Make sidebar content in a column */
+}
+
+.sidebar.open {
+  left: 0;
+  /* Show sidebar when open */
+}
+
+.sidebar-links {
+  flex: 1;
+  /* Take up remaining space */
+  display: flex;
+  flex-direction: column;
+  /* Align links in a column */
+}
+
+.sidebar a {
+  padding: 10px 15px;
+  text-decoration: none;
+  font-size: 18px;
+  color: #fff;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidebar a:hover {
+  color: #ffd700;
+  /* Gold color on hover */
+}
+
+.sidebar .closebtn {
+  position: absolute;
+  top: 20px;
+  right: 25px;
+  font-size: 36px;
+  cursor: pointer;
+}
+
+/* Overlay Styles */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+  z-index: 2;
+  /* Below the sidebar */
+}
+
+.overlay.show {
+  display: block;
+  /* Show overlay when sidebar is open */
+}
+
+/* Main Content Styles */
+/* Main Content Styles */
+.container {
+  margin: 20px;
+  padding: 70px;
+  /* Adjust padding as needed */
+  max-width: calc(80% - 120px);
+  /* Ensure the container adjusts for the sidebar width */
+  margin-right: 100px;
+  /* Ensure space for the sidebar */
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  /* Ensure content stacks vertically */
+  width: calc(100% - 100px);
+  /* Full width minus sidebar */
+  box-sizing: border-box;
+  /* Include padding in width calculations */
+
+
+}
+
+.animation-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.animated {
+  width: 100px;
+  /* Adjust size as needed */
+  height: 100px;
+  /* Adjust size as needed */
+}
+
+.container h1,
+.container p {
+  margin: 0;
+  /* Remove default margins */
+  width: 100%;
+  /* Ensure text takes up the full width of the container */
+}
+
+/* Adjust the margin for headings and paragraphs as needed */
+.container h1 {
+  margin-bottom: 10px;
+}
+
+.container p {
+  margin-top: 0;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+
+}
+
+svg {
+  width: calc(68px * 3);
+  height: calc(66px * 3);
+}
+
+/* ELEMENTS POSITIONS */
+#building_bottom,
+#window_01,
+#window_02,
+#door {
+  transform: translateY(20px);
+  z-index: 1;
+}
+
+#building_top,
+#balcony_01,
+#balcony_02,
+#balcony_03,
+#balcony_04,
+#balcony_05,
+#balcony_06 {
+  transform: translateY(56px);
+  z-index: -1;
+}
+
+#small_tree,
+#big_tree {
+  transform: translateY(28px);
+}
+
+/* ELEMENTS ANIMATIONS */
+#building_bottom {
+  animation: buildingBottom 1s ease-out forwards;
+}
+
+#window_01,
+#window_02,
+#door {
+  animation: buildingBottom 1s 0.1s ease-in forwards;
+}
+
+#building_top {
+  animation: buildingTop 1s 1.2s ease-out forwards;
+}
+
+#balcony_01,
+#balcony_02,
+#balcony_03 {
+  animation: buildingTop 1s 1.4s ease-out forwards;
+}
+
+#balcony_04,
+#balcony_05,
+#balcony_06 {
+  animation: buildingTop 1s 1.6s ease-out forwards;
+}
+
+#small_tree,
+#big_tree {
+  animation: trees 1s 2s ease-out forwards;
+}
+
+#cloud_left {
+  transform: translateX(-11px);
+  animation: cloudLeft 20s 2s linear infinite;
+}
+
+#cloud_right {
+  transform: translateX(72px);
+  animation: cloudRight 15s 2s linear infinite;
+}
+
+/* ANIMATIONS */
+@keyframes buildingBottom {
+  0% {
+    transform: translateY(20px)
+  }
+
+  100% {
+    transform: translateY(0)
+  }
+}
+
+@keyframes buildingTop {
+  0% {
+    transform: translateY(56px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes trees {
+  0% {
+    transform: translateY(28px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes cloudLeft {
+  0% {
+    transform: translateX(-11px);
+  }
+
+  100% {
+    transform: translateX(100px);
+  }
+}
+
+@keyframes cloudRight {
+  0% {
+    transform: translateX(72px);
+  }
+
+  100% {
+    transform: translateX(-100px);
+  }
+}
