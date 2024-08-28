@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Navbar and Sidebar</title>
+  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="./pages/css/home.css">
+</head>
+
+<body ng-app="myApp" ng-controller="NavController">
+  <!-- Static Navigation Bar -->
+  <nav class="navbar">
+    <span class="nav-button" ng-click="toggleSidebar()">Cafehub</span>
+    <div class="navbar-content">
+      <a href="#!/" ng-class="{active: isActive('/')}" ng-click="setActive('/')">Home</a>
+      <a href="#!/about" ng-class="{active: isActive('/about')}" ng-click="setActive('/about')">About</a>
+      <a href="#!/contact" ng-class="{active: isActive('/contact')}" ng-click="setActive('/contact')">Contact</a>
+    </div>
+  </nav>
+
+  <!-- Sidebar -->
+  <section id="sidebar" class="sidebar" ng-class="{open: isSidebarOpen}">
+    <a href="javascript:void(0)" class="closebtn" ng-click="toggleSidebar()">×</a>
+    <div class="sidebar-links">
+      <a href="#!/" ng-class="{active: isActive('/')}" ng-click="setActive('/')">Home</a>
+      <a href="#!/about" ng-class="{active: isActive('/about')}" ng-click="setActive('/about')">About</a>
+      <a href="#!/contact" ng-class="{active: isActive('/contact')}" ng-click="setActive('/contact')">Contact</a>
+    </div>
+  </section>
+
+  <!-- Overlay -->
+  <section id="overlay" class="overlay" ng-class="{show: isSidebarOpen}" ng-click="toggleSidebar()"></section>
+
+  <!-- Main Content -->
+  <section ng-view class="container">
+  </section>
+
+
+  <!-- AngularJS and App Script -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-route.min.js"></script>
+  <script src="index.js"></script>
+</body>
+
+</html>
