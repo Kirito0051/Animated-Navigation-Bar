@@ -149,3 +149,42 @@ body {
   border-radius: 30px;
   padding: 50px;
 }
+
+.footer {
+  padding: 2px; 
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  background: #f5f5f0;;
+  color: #7b85c6;
+  text-align: center;
+}
+
+.footer .fa {
+  padding: 8px;
+  font-size: 16px; 
+  width: 30px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.fa-facebook {
+  color: #3b3b3b; 
+}  
+
+.fa-instagram {
+  color: #3b3b3b; 
+}
+
+.fa-whatsapp {
+  color: #3b3b3b;
+}
+
+.footer p {
+  font-family: 'Georgia', serif; 
+  font-size: 12px; 
+  font-weight: 40; 
+  color: #555; 
+  margin-top: 1px;
+  line-height: 1; 
+}
