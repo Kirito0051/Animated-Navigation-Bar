@@ -1,15 +1,9 @@
 .parallax {
     background-image: url('\assets\Coffee(1).jpg');
     background-size: cover;
-    /* Ensures the image covers the entire div */
     background-position: center;
     width: 100%;
-    /* Sets the container to the maximum width */
     height: 100vh;
-    /* Sets the container to 100% of the viewport height */
-    /* Centers the image in the div */
     padding: 20px;
-    /* Optional: Adds padding inside the div */
     color: #fff;
-    /* Optional: Changes text color to white for better readability */
 }
